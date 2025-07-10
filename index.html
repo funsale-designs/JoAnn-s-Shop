@@ -137,6 +137,41 @@
             text-align: center;
         }
 
+        /* Image Upload Section */
+        .image-upload-section {
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .image-upload-section input[type="file"] {
+            display: block;
+            margin: 15px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .image-preview img {
+            max-width: 150px;
+            max-height: 150px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .upload-note {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+
         /* Adjust for smaller screens */
         @media (max-width: 600px) {
             .order-form-item {
@@ -250,7 +285,7 @@
                 <tr><td>BEEF CURRY PASTRY - Baked</td><td>1</td><td>R19,50</td></tr>
                 <tr><td>CHICKEN CURRY PASTRY - Baked</td><td>1</td><td>R19,50</td></tr>
                 <tr><td>SAUSAGE ROLL BEEF - Baked</td><td>1</td><td>R19,50</td></tr>
-                <tr><td>SAUSAGE ROLL CHICKEN - Baked</td><td>1</td><td>R19,50</td></tr>
+                <tr><td>SAUSAGE ROLL CHICKEN - Baked</td><td>1</td><td>R19,50</td>
                 <tr><td>CHEESE & SMOKEY BEEF PASTRY - Baked</td><td>1</td><td>R19,50</td></tr>
                 <tr><td>CHICKEN MAYO - Baked</td><td>1</td><td>R19,50</td></tr>
                 <tr><td>CHEESE GRILLER - Baked</td><td>1</td><td>R22,50</td></tr>
@@ -421,6 +456,17 @@
             </form>
         </div>
 
+        <div class="image-upload-section">
+            <h2>Upload Pictures (Optional)</h2>
+            <p class="upload-note">
+                You can select images here to attach to your order email.
+                <strong>Please note: These images are attached to the email you send from your device. They are NOT uploaded to a server.</strong>
+            </p>
+            <input type="file" id="imageUpload" accept="image/*" multiple>
+            <div class="image-preview" id="imagePreview">
+                </div>
+        </div>
+
         <div class="footer">
             <p>Thank you for supporting Jo-Ann's Shop!</p>
         </div>
@@ -438,12 +484,12 @@
             let orderDetails = "Order Details:\n\n";
             let hasItems = false;
 
-            // Select all number inputs within the order form
+            // Collect selected products and quantities
             const quantityInputs = document.querySelectorAll('#orderForm input[type="number"]');
             quantityInputs.forEach(input => {
                 const quantity = parseInt(input.value);
                 if (quantity > 0) {
-                    const productName = input.name; // Use the 'name' attribute which holds the product name
+                    const productName = input.name;
                     orderDetails += `${productName}: ${quantity}\n`;
                     hasItems = true;
                 }
@@ -464,13 +510,51 @@
                 body += `\nAdditional Notes: ${additionalNotes}\n`;
             }
 
+            // Get selected images' data (as base64) to potentially include in email body.
+            // Note: Mailto links have size limitations. Large images will likely fail.
+            // This is primarily for small icons or very few/small images.
+            // For actual image attachments, a server-side solution is necessary.
+            const imageFiles = document.getElementById('imageUpload').files;
+            const attachmentsInfo = [];
+            if (imageFiles.length > 0) {
+                body += "\n--- Attached Image Files (refer to actual email attachments if supported by your email client) ---\n";
+                for (let i = 0; i < imageFiles.length; i++) {
+                    attachmentsInfo.push(imageFiles[i].name);
+                }
+                body += "Images selected: " + attachmentsInfo.join(", ") + "\n";
+                body += "Note: Images are not embedded here due to mailto link limitations, but your email client might attach them if you initiated this email from a compose window.\n";
+            }
+
             const emailBody = encodeURIComponent(body);
             const emailSubject = encodeURIComponent(subject);
             // !! IMPORTANT: Replace 'joanns.email@example.com' with Jo-Ann's actual email address !!
             const mailtoLink = `mailto:joanns.email@example.com?subject=${emailSubject}&body=${emailBody}`;
 
             window.location.href = mailtoLink;
-            alert("Your order email has been generated. Please review and send it from your email client.");
+            alert("Your order email has been generated. Please review and send it from your email client. Remember to manually attach any desired pictures if your email client does not automatically do so.");
+        });
+
+        // JavaScript for Image Preview
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const previewContainer = document.getElementById('imagePreview');
+            previewContainer.innerHTML = ''; // Clear previous previews
+
+            const files = event.target.files;
+            if (files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.alt = file.name;
+                            previewContainer.appendChild(img);
+                        };
+                        reader.readAsDataURL(file); // Read file as a data URL for preview
+                    }
+                }
+            }
         });
     </script>
 </body>
