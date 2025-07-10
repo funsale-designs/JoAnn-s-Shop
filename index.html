@@ -230,6 +230,16 @@
             outline: none;
         }
 
+        #orderTotal {
+            text-align: right;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #555;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #d0afff; /* Purple for total */
+        }
+
         /* Gallery Section Styles */
         .gallery-grid {
             display: grid;
@@ -488,92 +498,94 @@
                     <h3>Select Items and Quantities:</h3>
 
                     <div class="section-title">PLATE PIES - BAKED</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>PEPPER STEAK PLATE PIE - 550G</span> <span class="price">R63,50</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK PLATE PIE - 550G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>ROAST CHICKEN PLATE PIE - 550G</span> <span class="price">R63,00</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN PLATE PIE - 550G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHICKEN & MUSHROOM PLATE PIE - 550G</span> <span class="price">R63,00</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM PLATE PIE - 550G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>PLAIN STEAK PLATE PIE - 550G</span> <span class="price">R63,00</span> <span class="quantity-input"><input type="number" name="PLAIN STEAK PLATE PIE - 550G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>ROAST CHICKEN PLATE PIE - 1KG</span> <span class="price">R74,00</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN PLATE PIE - 1KG" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>PLAIN STEAK PLATE PIE - 1KG</span> <span class="price">R74,00</span> <span class="quantity-input"><input type="number" name="PLAIN STEAK PLATE PIE - 1KG" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="PLATE PIES - BAKED">
+                        <div class="order-form-item"><span>PEPPER STEAK PLATE PIE - 550G</span> <span class="price" data-price="63.50">R63,50</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK PLATE PIE - 550G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>ROAST CHICKEN PLATE PIE - 550G</span> <span class="price" data-price="63.00">R63,00</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN PLATE PIE - 550G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHICKEN & MUSHROOM PLATE PIE - 550G</span> <span class="price" data-price="63.00">R63,00</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM PLATE PIE - 550G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>PLAIN STEAK PLATE PIE - 550G</span> <span class="price" data-price="63.00">R63,00</span> <span class="quantity-input"><input type="number" name="PLAIN STEAK PLATE PIE - 550G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>ROAST CHICKEN PLATE PIE - 1KG</span> <span class="price" data-price="74.00">R74,00</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN PLATE PIE - 1KG" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>PLAIN STEAK PLATE PIE - 1KG</span> <span class="price" data-price="74.00">R74,00</span> <span class="quantity-input"><input type="number" name="PLAIN STEAK PLATE PIE - 1KG" min="0" value="0"></span></div>
                     </div>
 
                     <div class="section-title">LARGE QUICHES</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>QUICHE LORRAINE - 450G</span> <span class="price">R61,00</span> <span class="quantity-input"><input type="number" name="QUICHE LORRAINE - 450G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CREAMY SPINACH & FETA - 450G</span> <span class="price">R61,00</span> <span class="quantity-input"><input type="number" name="CREAMY SPINACH & FETA - 450G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>SUNDRIED TOMATO QUICHE - 450G</span> <span class="price">R57,00</span> <span class="quantity-input"><input type="number" name="SUNDRIED TOMATO QUICHE - 450G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CRUSTLESS QUICHE LORRAINE - 300G</span> <span class="price">R49,50</span> <span class="quantity-input"><input type="number" name="CRUSTLESS QUICHE LORRAINE - 300G" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="LARGE QUICHES">
+                        <div class="order-form-item"><span>QUICHE LORRAINE - 450G</span> <span class="price" data-price="61.00">R61,00</span> <span class="quantity-input"><input type="number" name="QUICHE LORRAINE - 450G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CREAMY SPINACH & FETA - 450G</span> <span class="price" data-price="61.00">R61,00</span> <span class="quantity-input"><input type="number" name="CREAMY SPINACH & FETA - 450G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>SUNDRIED TOMATO QUICHE - 450G</span> <span class="price" data-price="57.00">R57,00</span> <span class="quantity-input"><input type="number" name="SUNDRIED TOMATO QUICHE - 450G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CRUSTLESS QUICHE LORRAINE - 300G</span> <span class="price" data-price="49.50">R49,50</span> <span class="quantity-input"><input type="number" name="CRUSTLESS QUICHE LORRAINE - 300G" min="0" value="0"></span></div>
                     </div>
 
                     <div class="section-title">SUNRIES</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>COCKTAIL SAUSAGE 24'S - Beef</span> <span class="price">R43,00</span> <span class="quantity-input"><input type="number" name="COCKTAIL SAUSAGE 24S - Beef" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>MINI ROAST CHICKEN PIE 9'S - Baked</span> <span class="price">R43,50</span> <span class="quantity-input"><input type="number" name="MINI ROAST CHICKEN PIE 9S - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>MINI CRUSTLESS QUICHE LORRAINE - 35G</span> <span class="price">R43,50</span> <span class="quantity-input"><input type="number" name="MINI CRUSTLESS QUICHE LORRAINE - 35G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>MINI READY-MADE MARGHERITA - 60G</span> <span class="price">R84,50</span> <span class="quantity-input"><input type="number" name="MINI READY-MADE MARGHERITA - 60G" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="SUNRIES">
+                        <div class="order-form-item"><span>COCKTAIL SAUSAGE 24'S - Beef</span> <span class="price" data-price="43.00">R43,00</span> <span class="quantity-input"><input type="number" name="COCKTAIL SAUSAGE 24S - Beef" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>MINI ROAST CHICKEN PIE 9'S - Baked</span> <span class="price" data-price="43.50">R43,50</span> <span class="quantity-input"><input type="number" name="MINI ROAST CHICKEN PIE 9S - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>MINI CRUSTLESS QUICHE LORRAINE - 35G</span> <span class="price" data-price="43.50">R43,50</span> <span class="quantity-input"><input type="number" name="MINI CRUSTLESS QUICHE LORRAINE - 35G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>MINI READY-MADE MARGHERITA - 60G</span> <span class="price" data-price="84.50">R84,50</span> <span class="quantity-input"><input type="number" name="MINI READY-MADE MARGHERITA - 60G" min="0" value="0"></span></div>
                     </div>
 
                     <div class="section-title">PRE-BAKED SINGLE PIES</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>STEAK & KIDNEY PIE - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="STEAK & KIDNEY PIE - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>PEPPER STEAK PIE - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK PIE - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>ROAST CHICKEN PIE - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN PIE - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHICKEN & MUSHROOM PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CORNISH PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="CORNISH PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>SPINACH & FETA PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="SPINACH & FETA PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHEESE & ONION PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="CHEESE & ONION PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>BEEF & ONION PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="BEEF & ONION PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>BEEF CURRY PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="BEEF CURRY PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHICKEN CURRY PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="CHICKEN CURRY PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>SAUSAGE ROLL BEEF - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="SAUSAGE ROLL BEEF - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>SAUSAGE ROLL CHICKEN - Baked</span> <span class="price">R19,50</td><span class="quantity-input"><input type="number" name="SAUSAGE ROLL CHICKEN - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHEESE & SMOKEY BEEF PASTRY - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="CHEESE & SMOKEY BEEF PASTRY - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHICKEN MAYO - Baked</span> <span class="price">R19,50</span> <span class="quantity-input"><input type="number" name="CHICKEN MAYO - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHEESE GRILLER - Baked</span> <span class="price">R22,50</span> <span class="quantity-input"><input type="number" name="CHEESE GRILLER - Baked" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>BURGER PIE - Baked</span> <span class="price">R25,00</span> <span class="quantity-input"><input type="number" name="BURGER PIE - Baked" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="PRE-BAKED SINGLE PIES">
+                        <div class="order-form-item"><span>STEAK & KIDNEY PIE - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="STEAK & KIDNEY PIE - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>PEPPER STEAK PIE - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK PIE - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>ROAST CHICKEN PIE - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN PIE - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHICKEN & MUSHROOM PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CORNISH PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="CORNISH PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>SPINACH & FETA PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="SPINACH & FETA PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHEESE & ONION PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="CHEESE & ONION PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>BEEF & ONION PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="BEEF & ONION PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>BEEF CURRY PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="BEEF CURRY PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHICKEN CURRY PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="CHICKEN CURRY PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>SAUSAGE ROLL BEEF - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="SAUSAGE ROLL BEEF - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>SAUSAGE ROLL CHICKEN - Baked</span> <span class="price" data-price="19.50">R19,50</span><span class="quantity-input"><input type="number" name="SAUSAGE ROLL CHICKEN - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHEESE & SMOKEY BEEF PASTRY - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="CHEESE & SMOKEY BEEF PASTRY - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHICKEN MAYO - Baked</span> <span class="price" data-price="19.50">R19,50</span> <span class="quantity-input"><input type="number" name="CHICKEN MAYO - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHEESE GRILLER - Baked</span> <span class="price" data-price="22.50">R22,50</span> <span class="quantity-input"><input type="number" name="CHEESE GRILLER - Baked" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>BURGER PIE - Baked</span> <span class="price" data-price="25.00">R25,00</span> <span class="quantity-input"><input type="number" name="BURGER PIE - Baked" min="0" value="0"></span></div>
                     </div>
 
                     <div class="section-title">PIE 6 PACK UNCOOKED - Frozen</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>STEAK & KIDNEY (6 x 160g) - Frozen - Box</span> <span class="price">R80,00</span> <span class="quantity-input"><input type="number" name="STEAK & KIDNEY (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>PEPPER STEAK (6 x 160g) - Frozen - Box</span> <span class="price">R80,00</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHICKEN & MUSHROOM (6 x 160g) - Frozen - Box</span> <span class="price">R80,00</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>SAUSAGE ROLL (6 x 160g) - Frozen - Box</span> <span class="price">R80,00</span> <span class="quantity-input"><input type="number" name="SAUSAGE ROLL (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>STEAK & KIDNEY (6 x 190g) - Frozen</span> <span class="price">R98,50</span> <span class="quantity-input"><input type="number" name="STEAK & KIDNEY (6 x 190g) - Frozen" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>PEPPER STEAK (6 x 190g) - Frozen</span> <span class="price">R98,50</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK (6 x 190g) - Frozen" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>ROAST CHICKEN (6 x 190g) - Frozen</span> <span class="price">R98,50</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN (6 x 190g) - Frozen" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHICKEN & MUSHROOM (6 x 190g) - Frozen</span> <span class="price">R98,50</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM (6 x 190g) - Frozen" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>FAN PIES (6 X 190g) - Frozen</span> <span class="price">R98,50</span> <span class="quantity-input"><input type="number" name="FAN PIES (6 X 190g) - Frozen" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="PIE 6 PACK UNCOOKED - Frozen">
+                        <div class="order-form-item"><span>STEAK & KIDNEY (6 x 160g) - Frozen - Box</span> <span class="price" data-price="80.00">R80,00</span> <span class="quantity-input"><input type="number" name="STEAK & KIDNEY (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>PEPPER STEAK (6 x 160g) - Frozen - Box</span> <span class="price" data-price="80.00">R80,00</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHICKEN & MUSHROOM (6 x 160g) - Frozen - Box</span> <span class="price" data-price="80.00">R80,00</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>SAUSAGE ROLL (6 x 160g) - Frozen - Box</span> <span class="price" data-price="80.00">R80,00</span> <span class="quantity-input"><input type="number" name="SAUSAGE ROLL (6 x 160g) - Frozen - Box" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>STEAK & KIDNEY (6 x 190g) - Frozen</span> <span class="price" data-price="98.50">R98,50</span> <span class="quantity-input"><input type="number" name="STEAK & KIDNEY (6 x 190g) - Frozen" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>PEPPER STEAK (6 x 190g) - Frozen</span> <span class="price" data-price="98.50">R98,50</span> <span class="quantity-input"><input type="number" name="PEPPER STEAK (6 x 190g) - Frozen" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>ROAST CHICKEN (6 x 190g) - Frozen</span> <span class="price" data-price="98.50">R98,50</span> <span class="quantity-input"><input type="number" name="ROAST CHICKEN (6 x 190g) - Frozen" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHICKEN & MUSHROOM (6 x 190g) - Frozen</span> <span class="price" data-price="98.50">R98,50</span> <span class="quantity-input"><input type="number" name="CHICKEN & MUSHROOM (6 x 190g) - Frozen" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>FAN PIES (6 X 190g) - Frozen</span> <span class="price" data-price="98.50">R98,50</span> <span class="quantity-input"><input type="number" name="FAN PIES (6 X 190g) - Frozen" min="0" value="0"></span></div>
                     </div>
 
                     <div class="section-title">PIE - FROZEN</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>SAUSAGE CATER ROLLS (120x50g)</span> <span class="price">R290,00</span> <span class="quantity-input"><input type="number" name="SAUSAGE CATER ROLLS (120x50g)" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="PIE - FROZEN">
+                        <div class="order-form-item"><span>SAUSAGE CATER ROLLS (120x50g)</span> <span class="price" data-price="290.00">R290,00</span> <span class="quantity-input"><input type="number" name="SAUSAGE CATER ROLLS (120x50g)" min="0" value="0"></span></div>
                     </div>
 
                     <div class="section-title">DESSERTS - BAKED</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>MALVA PUDDING - 450G</span> <span class="price">R40,00</span> <span class="quantity-input"><input type="number" name="MALVA PUDDING - 450G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>CHOCOLATE PUDDING - 450G</span> <span class="price">R43,50</span> <span class="quantity-input"><input type="number" name="CHOCOLATE PUDDING - 450G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>STICKY COFFEE PUDDING - 450G</span> <span class="price">R47,50</span> <span class="quantity-input"><input type="number" name="STICKY COFFEE PUDDING - 450G" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="DESSERTS - BAKED">
+                        <div class="order-form-item"><span>MALVA PUDDING - 450G</span> <span class="price" data-price="40.00">R40,00</span> <span class="quantity-input"><input type="number" name="MALVA PUDDING - 450G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>CHOCOLATE PUDDING - 450G</span> <span class="price" data-price="43.50">R43,50</span> <span class="quantity-input"><input type="number" name="CHOCOLATE PUDDING - 450G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>STICKY COFFEE PUDDING - 450G</span> <span class="price" data-price="47.50">R47,50</span> <span class="quantity-input"><input type="number" name="STICKY COFFEE PUDDING - 450G" min="0" value="0"></span></div>
                     </div>
 
                     <div class="section-title">PIZZAS - UNCOOKED</div>
-                    <div class="order-form-group">
-                        <div class="order-form-item"><span>BOB CHICKEN, BACON & MUSHROOM - 445G</span> <span class="price">R58,00</span> <span class="quantity-input"><input type="number" name="BOB CHICKEN, BACON & MUSHROOM - 445G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>BACON & FETA - 430G</span> <span class="price">R58,00</span> <span class="quantity-input"><input type="number" name="BACON & FETA - 430G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>HAWAII - 415G</span> <span class="price">R53,00</span> <span class="quantity-input"><input type="number" name="HAWAII - 415G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>PEPPERONI - 410G</span> <span class="price">R53,00</span> <span class="quantity-input"><input type="number" name="PEPPERONI - 410G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>REGINA - 415G</span> <span class="price">R53,00</span> <span class="quantity-input"><input type="number" name="REGINA - 415G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>THREE CHEESE - 390G</span> <span class="price">R47,50</span> <span class="quantity-input"><input type="number" name="THREE CHEESE - 390G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>MARGARITA - 370G</span> <span class="price">R42,00</span> <span class="quantity-input"><input type="number" name="MARGARITA - 370G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>SWEET & STICKY BBQ CHICKEN - 470G</span> <span class="price">R58,00</span> <span class="quantity-input"><input type="number" name="SWEET & STICKY BBQ CHICKEN - 470G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>PIZZA BASES - 450G</span> <span class="price">R32,50</span> <span class="quantity-input"><input type="number" name="PIZZA BASES - 450G" min="0" value="0"></span></div>
-                        <div class="order-form-item"><span>SPINACH & FETA - 440G</span> <span class="price">R47,50</span> <span class="quantity-input"><input type="number" name="SPINACH & FETA - 440G" min="0" value="0"></span></div>
+                    <div class="order-form-group" data-category="PIZZAS - UNCOOKED">
+                        <div class="order-form-item"><span>BOB CHICKEN, BACON & MUSHROOM - 445G</span> <span class="price" data-price="58.00">R58,00</span> <span class="quantity-input"><input type="number" name="BOB CHICKEN, BACON & MUSHROOM - 445G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>BACON & FETA - 430G</span> <span class="price" data-price="58.00">R58,00</span> <span class="quantity-input"><input type="number" name="BACON & FETA - 430G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>HAWAII - 415G</span> <span class="price" data-price="53.00">R53,00</span> <span class="quantity-input"><input type="number" name="HAWAII - 415G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>PEPPERONI - 410G</span> <span class="price" data-price="53.00">R53,00</span> <span class="quantity-input"><input type="number" name="PEPPERONI - 410G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>REGINA - 415G</span> <span class="price" data-price="53.00">R53,00</span> <span class="quantity-input"><input type="number" name="REGINA - 415G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>THREE CHEESE - 390G</span> <span class="price" data-price="47.50">R47,50</span> <span class="quantity-input"><input type="number" name="THREE CHEESE - 390G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>MARGARITA - 370G</span> <span class="price" data-price="42.00">R42,00</span> <span class="quantity-input"><input type="number" name="MARGARITA - 370G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>SWEET & STICKY BBQ CHICKEN - 470G</span> <span class="price" data-price="58.00">R58,00</span> <span class="quantity-input"><input type="number" name="SWEET & STICKY BBQ CHICKEN - 470G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>PIZZA BASES - 450G</span> <span class="price" data-price="32.50">R32,50</span> <span class="quantity-input"><input type="number" name="PIZZA BASES - 450G" min="0" value="0"></span></div>
+                        <div class="order-form-item"><span>SPINACH & FETA - 440G</span> <span class="price" data-price="47.50">R47,50</span> <span class="quantity-input"><input type="number" name="SPINACH & FETA - 440G" min="0" value="0"></span></div>
                     </div>
 
                     <label for="additionalNotes">Additional Notes / Special Instructions:</label>
                     <textarea id="additionalNotes" name="additionalNotes" rows="4"></textarea>
+
+                    <div id="orderTotal">Total: R0.00</div>
 
                     <button type="submit" class="order-form-submit">Send Order via WhatsApp</button>
                 </form>
@@ -636,72 +648,11 @@
 
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
+            if (tabName === 'OrderForm') {
+                updateOrderTotal(); // Update total when switching to order form
+            }
         }
 
         // Auto-open the first tab on page load
         document.addEventListener('DOMContentLoaded', (event) => {
-            const firstTabButton = document.querySelector('.tab-button');
-            if (firstTabButton) {
-                firstTabButton.click();
-            }
-        });
-
-        // Order form submission logic for WhatsApp
-        document.getElementById('orderForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const customerName = document.getElementById('customerName').value;
-            const customerEmail = document.getElementById('customerEmail').value; // Still collect, but not used in WhatsApp msg directly
-            const customerPhone = document.getElementById('customerPhone').value;
-            const additionalNotes = document.getElementById('additionalNotes').value;
-
-            let orderMessage = "Hello Jo-Ann, I'd like to place an order!\n\n";
-            orderMessage += `Customer Name: ${customerName}\n`;
-            if (customerEmail) {
-                orderMessage += `Customer Email: ${customerEmail}\n`; // Include email in message for reference
-            }
-            orderMessage += `Customer Phone: ${customerPhone}\n\n`;
-            orderMessage += "My Order:\n";
-
-            let hasItems = false;
-
-            // Collect selected products and quantities
-            const quantityInputs = document.querySelectorAll('#orderForm input[type="number"]');
-            quantityInputs.forEach(input => {
-                const quantity = parseInt(input.value);
-                if (quantity > 0) {
-                    const productName = input.name;
-                    // Format product name for message (remove suffixes for cleaner text)
-                    const displayProductName = productName.replace(/ - (Baked|Frozen|Box|Beef|35G|60G|450G|445G|430G|415G|410G|390G|370G|470G|440G|1KG)$/i, '').trim();
-                    orderMessage += `- ${displayProductName}: ${quantity}\n`;
-                    hasItems = true;
-                }
-            });
-
-            if (!hasItems) {
-                orderMessage += "No specific items selected via form. Please describe your order if this was intentional.\n";
-            }
-
-            if (additionalNotes) {
-                orderMessage += `\nAdditional Notes: ${additionalNotes}\n`;
-            }
-
-            orderMessage += `\nThank you!\nSent via your website on ${new Date().toLocaleDateString('en-ZA', { day: 'numeric', month: 'long', year: 'numeric' })} at ${new Date().toLocaleTimeString('en-ZA', { hour: '2-digit', minute: '2-digit'})}.`;
-
-            // Jo-Ann's WhatsApp number (South Africa country code 27 + 730772950)
-            const joannsWhatsAppNumber = '27730772950';
-
-            // Encode the message for the URL
-            const encodedMessage = encodeURIComponent(orderMessage);
-
-            // Create the WhatsApp link
-            const whatsappLink = `https://wa.me/${joannsWhatsAppNumber}?text=${encodedMessage}`;
-
-            // Open WhatsApp
-            window.open(whatsappLink, '_blank');
-
-            alert("Your order message has been prepared! Please review and send it in WhatsApp.");
-        });
-    </script>
-</body>
-</html>
+            const firstTabButton
